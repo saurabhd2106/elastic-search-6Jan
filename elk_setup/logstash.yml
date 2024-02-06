@@ -1,0 +1,14 @@
+logstash.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false
+
+pipeline:
+  batch:
+    size: 125
+    delay: 50
+  - id: sample-logstash-pipeline
+    path:
+      config: /usr/share/logstash/pipeline/logstash.conf
+
+node.name: MyLogstashMachine

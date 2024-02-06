@@ -1,0 +1,32 @@
+filebeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false
+
+filebeat.autodiscover:
+  providers:
+    - type: docker
+      hints.enabled: true
+filebeat.inputs:
+- type: filestream
+  id: my-filestream-id 
+  paths:
+    - /var/log/syslog
+    - /var/log/auth.log
+- type: filestream
+  id: apache-filestream-id
+  paths:
+    - "/var/log/apache2/*"
+  fields:
+    apache: true
+  fields_under_root: true
+  
+processors:
+- add_cloud_metadata: ~
+
+output.elasticsearch:
+  hosts: '${ELASTICSEARCH_HOSTS:https://ec2-54-174-191-124.compute-1.amazonaws.com/:9200}'
+  username: '${ELASTICSEARCH_USERNAME:elastic}'
+  password: '${ELASTICSEARCH_PASSWORD:54-SIMbEtC5Q7ki9VFh7}'
+  ssl:
+    verification_mode: "none"

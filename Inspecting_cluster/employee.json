@@ -1,0 +1,11 @@
+{
+    "name" : "Saurabh",
+    "email_id" : "saurabh.d2106@gmail.com",
+
+    "phone_number" : [64564654, 46545646],
+
+    "address" : {
+        "house_number" : 56,
+        "street_number": 12
+    }
+}

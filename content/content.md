@@ -8,3 +8,12 @@
 6. Managing Documents and Indices
 7. Sharding, Replication and Snapshots
 8. Searching documents in Elasticsearch
+
+
+**Day 2 Content**
+
+9. Setup Metricbeat and import system metrics to Elasticsearch and Kibana
+10. Setup Filestash and import log data to Elasticsearch and Kibana
+11. Setup logstash and import data from various sources to Kibana
+12. Importing data to Elasticsearch using custom scripts, Integration plugins etc.
+
